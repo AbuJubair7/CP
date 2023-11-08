@@ -1,0 +1,95 @@
+/*........... বিসমিল্লাহির রাহমানির রাহীম .................
+
+Author: jubair7
+Date: 2 Feb 2022
+*/
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define BOOST   ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+#define FOR(i,n) for(ll i = 0 ; i<n ; i++)
+#define endl "\n"
+#define pb push_back
+//#define jubs
+
+typedef long long ll;
+const int mx = 1e5  + 1;
+
+const static string PI = "3141592653589793238462643383279";
+
+/*........................start.............................*/
+void solve(){
+
+ int t;
+ cin>>t;
+
+
+ while(t--){
+  int n, m, d;
+  cin>>n>>m>>d;
+
+  int pos[n+1];
+  vector<int> arr(m);
+  for(int i = 1; i<=n; i++){
+    int x;
+    cin>>x;
+    pos[x] = i;
+  }
+
+  for(int i = 0; i<m; i++){
+    cin>>arr[i];
+  }
+  int ok = 0;
+  for(int i = 0; i<m-1; i++){
+   
+    if(pos[arr[i]] > pos[arr[i+1]]
+        || abs(pos[arr[i+1]]-pos[arr[i]]) > d){
+        ok = 1;
+        break;
+    }
+    
+  }
+
+  if(ok) cout<<0<<endl;
+  else{
+    int op = INT_MAX;
+    for(int i = 0; i<m-1; i++){
+        int middleDis = abs(pos[arr[i]]-pos[arr[i+1]]);
+        int need = abs((d+1) - middleDis);
+        if(pos[arr[i+1]]+need > n and pos[arr[i]]-need < 1
+            and (n-pos[arr[i+1]]) + (pos[arr[i]] - 1) < need){
+        
+             need = INT_MAX;
+
+        }
+        int tmpAns = min(middleDis, need);
+        op = min(op, tmpAns);
+    }
+    cout<<op<<endl;
+
+  }
+
+ }
+    
+}
+
+int main(){
+    BOOST;
+    #ifdef jubs
+        double start = clock();
+    #endif
+
+    solve();
+    
+    #ifdef jubs
+        double tim = (clock() - start)/CLOCKS_PER_SEC;
+        cout<<"Running Time : "<<tim<<" \n";
+    #endif
+    return 0;
+}
+
+
+
+

@@ -1,0 +1,120 @@
+/*........... বিসমিল্লাহির রাহমানির রাহীম .................
+
+Author: jubs
+Date: 3 Dec 2022
+Problem: MKTHNUM - K-th Number (spoj)
+*/
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define BOOST   ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+#define FOR(i,n) for(ll i = 0 ; i<n ; i++)
+#define endl "\n"
+#define pb push_back
+//#define jubs
+
+typedef long long ll;
+
+const int mx = 100000+5;
+static vector<vector<int>> tree(mx*4);
+static int arr[mx];
+
+void build(int node, int l, int r){
+
+	if(l == r){
+		tree[node].pb(arr[l]);
+		return;
+	}
+	int mid = (r+l)/2;
+	build(node *2, l, mid);
+	build(node*2+1, mid+1, r);
+
+	vector<int> left = tree[node*2];
+	vector<int> right = tree[node*2+1];
+	int i = 0, j = 0;
+	
+	while(i < left.size() and j < right.size()){
+		if(left[i] <= right[j]){
+			tree[node].pb(left[i]);
+			i++;
+		}else{
+			tree[node].pb(right[j]);
+			j++;
+		}
+	}
+
+	while(i < left.size()) tree[node].pb(left[i++]);
+	while(j < right.size()) tree[node].pb(right[j++]);
+}
+
+vector<int> query(int node, int L, int R, int l, int r, int k){
+	if(L > r || R < l) return vector<int>(0);
+	else if(L >= l and R <= r){
+		return tree[node];
+			
+	}
+	int mid = (L+R)/2;
+
+	vector<int> left = query(node*2, L, mid, l, r, k);
+	vector<int> right = query(node*2+1, mid+1, R, l, r, k);
+	vector<int> final;
+	int i = 0, j = 0;
+	
+	while(i < left.size() and j < right.size()){
+		if(left[i] <= right[j]){
+			final.pb(left[i]);
+			i++;
+		}else{
+			final.pb(right[j]);
+			j++;
+		}
+	}
+
+	while(i < left.size()) final.pb(left[i++]);
+	while(j < right.size()) final.pb(right[j++]);
+
+	// for(auto i : final)
+	// 	cout<<i<<" ";
+	// cout<<endl;
+	return final;
+}
+
+
+
+/*........................start.............................*/
+void solve(){
+
+	int n,q;
+	cin>>n>>q;
+
+	for(int i = 1; i<=n; i++) cin>>arr[i];
+
+	//build(1, 1, n);
+
+ 	for(int i = 0; i<q; i++){
+ 		int l, r, k;
+ 		cin>>l>>r>>k;
+
+ 		cout<<query(1, 1, n, l, r, l+k-1)[k-1]<<endl;
+ 	}
+	
+}
+
+int main(){
+	BOOST;
+	#ifdef jubs
+        double start = clock();
+    #endif
+
+	solve();
+
+	
+	#ifdef jubs
+        double tim = (clock() - start)/CLOCKS_PER_SEC;
+        cout<<"Running Time : "<<tim<<" \n";
+    #endif
+	return 0;
+}
+

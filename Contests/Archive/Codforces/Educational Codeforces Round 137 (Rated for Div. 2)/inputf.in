@@ -1,0 +1,14 @@
+4
+3 7
+2 1 2
+5 9
+10 20 30 40 50
+1 1
+1
+2 1000
+1 1
+
+(day * i) + arr[i] = x
+iDay + arr[i] = x
+iday = x- arr[i]
+day = (x - arr[i])/i
