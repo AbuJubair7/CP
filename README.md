@@ -1,2 +1,2 @@
 # CP
-The repo is al about competitive programming.
+The repo is all about competitive programming.
