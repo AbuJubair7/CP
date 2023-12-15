@@ -3,6 +3,12 @@ Author: jubair7
 Date: 29/11/23
 */
 
+/*
+1. what dose a state means?
+2. what are the transitions
+3. what is the base case?
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
