@@ -44,13 +44,13 @@ ll query(int node, int L, int R, int l, int r){
 	int mid = (L+R) /2;
 
 	ll left = query(node * 2,L, mid, l, r);
-	ll right = query(node * 2 +1, mid+1, R, l , r);
+	ll right = query(node * 2+1, mid+1, R, l , r);
 
 	return left+right;
 }
 
 void update(int node, int l, int r, int key, int val){
-	if(key < l || key > r) return;
+	// if(key < l || key > r) return;
 	else if(l == r){
 		segTree[node] = val;
 		return;
