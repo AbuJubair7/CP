@@ -80,7 +80,7 @@ void debug_out(Head H, Tail... T) {
   debug_out(T...);
 }
 
-#ifndef LOCAL
+#ifdef LOCAL
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
 #else
 #define debug(...) 42
