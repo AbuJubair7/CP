@@ -1,5 +1,5 @@
 {
-    "cmd": ["/opt/homebrew/bin/g++-13 -std=c++17 -Wall -Wextra -Wpedantic -DLOCAL $file_name -o $file_base_name && gtimeout 4s ./$file_base_name < inputf.in > outputf.in"],
+    "cmd": ["/opt/homebrew/bin/g++-13 -DLOCAL $file_name -o $file_base_name && gtimeout 4s ./$file_base_name < inputf.in > outputf.in"],
     "selector": "source.c++, source.cxx, source.cpp",
     "shell": true,
     "working_dir": "$file_path"
