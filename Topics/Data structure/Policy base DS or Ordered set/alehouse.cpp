@@ -3,7 +3,7 @@ Author: jubair7
 Date: 14/2/24
 */
 /*
-* link: https://vjudge.net/problem/Kattis-alehouse
+* Problem link: https://vjudge.net/problem/Kattis-alehouse
 * In short: Find a point where most of the segment meets.
 * Approach: Sort according to start of each segment.
 * Insert ends of sorted segment one by one and check 
