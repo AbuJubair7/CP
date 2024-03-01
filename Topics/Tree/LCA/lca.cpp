@@ -19,8 +19,6 @@ const int mx = 1e5  + 5;
 const int maxLog = log2(mx) + 5;
 static map<int, vector<int>> adj;
 static int n, level[mx], dp [mx][maxLog], root;
-
-
 void dfs(int s, int p){
     dp[s][0] = p;
     if(p == -1) level[s] = 0;
@@ -31,7 +29,6 @@ void dfs(int s, int p){
             dfs(i, s);
         }
     }
-
 }
 
 void build(){

@@ -19,26 +19,19 @@ const int mx = 1e5  + 5;
 static vector<vector<int>> adj(mx);
 static int FT[mx*2];
 static int S[mx], F[mx], timer;
-
-
 void dfs(int s, int p){
-
 	S[s] = timer;
 	FT[timer] = s;
 	timer++;
-
 	for(auto i : adj[s]){
 		if(i != p){
 			dfs(i, s);
 		}
 			
 	}
-
 	F[s] = timer;
 	FT[timer] = s;
 	timer++;
-
-	
 }
 /*........................start.............................*/
 void solve(){

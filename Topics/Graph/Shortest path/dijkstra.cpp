@@ -50,8 +50,6 @@ void dijkstra(){
 			}
 		}
 	}
-
-
 }
 
 void solve(){

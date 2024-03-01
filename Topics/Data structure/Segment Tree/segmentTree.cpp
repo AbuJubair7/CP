@@ -22,12 +22,10 @@ static ll segTree[mx * 4];
 static int arr[mx];
 
 void build(int node, int l, int r){
-
 	if(l == r){
 		segTree[node] = 1LL;
 		return;
 	}
-
 	int mid = (l+r)/2;
 
 	build(node * 2, l, mid);
@@ -37,7 +35,6 @@ void build(int node, int l, int r){
 }
 
 ll query(int node, int L, int R, int l, int r){
-
 	if(L > r || R < l) return 0;
 	else if(L >= l and R <=r) return segTree[node];
 

@@ -9,7 +9,6 @@ int main(){
 	char ch[] = {'A', 'B', 'C', 'D'};
 	int n = 4;
 	int tot = 1<<n;
-
 	for(int i = 0; i<tot; i++){
 
 		for(int j = 0; j<n; j++){

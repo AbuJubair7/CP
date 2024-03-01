@@ -8,16 +8,12 @@ using bitset memory/time complexity will resuce 32 times.
 #include<bits/stdc++.h>
 using namespace std;
 
-const int mx = 1e9+123;
+const int mx = 1e8+123;
 
 bitset<mx> primes;
-
-
 vector<int> seive(int n){
 	n += 100;
-
 	int sq = sqrt(n);
-
 	for(int i = 3; i<=n; i+=2) primes[i] = 1;
 
 	for(int i = 3; i<=sq; i+=2){
@@ -27,7 +23,6 @@ vector<int> seive(int n){
 			}
 		}
 	}
-
 	primes[2] = 1;
 	vector<int> p;
 	p.push_back(2);
