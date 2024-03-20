@@ -3,7 +3,7 @@ struct node {
   bool end;
   node () {
     end = false;
-    for (int i = 1; i<=26; i++) {
+    for (int i = 0; i<=26; i++) {
       this->adj[i] = NULL;
     }
   }
@@ -40,4 +40,12 @@ bool findP (string s) {
     curr = curr->adj[id];
   }
   return true;
+}
+
+void del (node* curr) {
+  for (int i = 0; i<=26; i++) {
+    if (curr->adj[i])
+      del(curr->adj[i]);
+  }
+  delete(curr);
 }
