@@ -1,8 +1,10 @@
 struct node {
   node* adj[26 + 7];
   bool end;
+  int visited;
   node () {
     end = false;
+    visited = 0;
     for (int i = 0; i<=26; i++) {
       this->adj[i] = NULL;
     }
@@ -16,6 +18,7 @@ void insert (string s) {
     if (curr->adj[id] == NULL)
       curr->adj[id] = new node();
     curr = curr->adj[id];
+    curr->visited++;
   }
   curr->end = true;
 }
