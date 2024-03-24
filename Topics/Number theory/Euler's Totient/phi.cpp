@@ -8,9 +8,6 @@ void phi (int n) {
     if (ph[i] == i) {
       for (int j = i; j <= n; j += i) {
         ph[j] -= ph[j] / i;
-        if (j == n) {
-          debug(j, i);
-        }
       }
     }
   }
@@ -28,7 +25,6 @@ int euler_totient(int n) {
       }
   }
   if (n > 1) {
-    debug(result, n, sqrt(tmp), n <= sqrt(tmp));
     result -= result / n;
   }
   return result;
