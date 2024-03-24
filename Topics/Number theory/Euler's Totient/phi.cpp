@@ -1,7 +1,7 @@
 int mx = 2e5 + 7;
 vector<int> ph(mx);
 
-void phi (int n) {
+void seive_phi (int n) {
   for (int i = 1; i<=n; i++) ph[i] = i;
   for (int i = 2; i<=n; i += 2) ph[i] -= ph[i] / 2;
   for (int i = 3; i <= n; i += 2) {
@@ -12,19 +12,17 @@ void phi (int n) {
     }
   }
 }
-int euler_totient(int n) {
+
+int phi(int n) {
   int result = n;
-  int tmp = n;
-  for (int i = 2; i <= sqrt(n); i += (i == 2 ? 1 : 2)) {
-      if (n % i == 0) {
-          while (n % i == 0) {
-              n /= i;
-          }
-          result -= result / i;
-      }
+  for (int i = 2; 1ll * i * i <= n; i += (i == 2 ? 1 : 2)) {
+    if (n % i == 0) {
+      while (n % i == 0)
+          n /= i;
+      result -= result / i;
+    }
   }
-  if (n > 1) {
+  if (n > 1)
     result -= result / n;
-  }
   return result;
 }
