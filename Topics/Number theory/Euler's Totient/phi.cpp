@@ -20,7 +20,6 @@ int euler_totient(int n) {
           while (n % i == 0) {
               n /= i;
           }
-          debug(i);
           result -= result / i;
       }
   }
