@@ -21,10 +21,7 @@ int main() {
   while (tt--) {
     int n, k;
     cin >> n >> k;
-    vector<long long> f(n + 1);
-    for (int i = 0; i <= n; i++) {
-      f[i] = 1;
-    }
+    vector<long long> f(n + 1, 1);
     for (int rock = 1; rock <= k; rock++) {
       vector<long long> ff(n + 1);
       for (int row = rock; row <= (n - k + rock); row++) {
