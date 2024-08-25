@@ -2,7 +2,6 @@
  *    author:  jubair7
  *    created: 25.08.2024 09:38:51
 **/
-// how many numbers are there which is less then x and digit sum is k
 #include <bits/stdc++.h>
  
 using namespace std;
