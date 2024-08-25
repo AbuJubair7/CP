@@ -2,6 +2,7 @@
  *    author:  jubair7
  *    created: 25.08.2024 09:38:51
 **/
+// number of integers less then or equal x which digit sum is equal to k 
 #include <bits/stdc++.h>
  
 using namespace std;
