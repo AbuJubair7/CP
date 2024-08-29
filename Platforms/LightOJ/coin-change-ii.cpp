@@ -33,17 +33,15 @@ int main() {
       cin >> a[i];
     }
     vector<int> f(k + 1);
+    f[0] = 1;
     int mod = 100000007;
     for (int i = 1; i <= n; i++) {
-      vector<int> ff(k + 1);
-      ff[0] = 1;
       for (int j = 1; j <= k; j++) {
-        ff[j] = f[j] % mod;
         if (j >= a[i]) {
-          ff[j] += (ff[j - a[i]]) % mod;
+          f[j] += (f[j - a[i]]) % mod;
+          f[j] %= mod;
         }
       }
-      f = ff;
     }
     cout << "Case " << ++tCase << ": " << f[k] % mod << '\n';
   }
