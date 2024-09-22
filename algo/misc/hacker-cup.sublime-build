@@ -1,0 +1,8 @@
+{
+    "cmd": [
+        "/opt/homebrew/bin/g++-14 -DLOCAL $file_name -o $file_base_name && gtimeout 120s ./$file_base_name < inputf.txt > outputf.txt"
+    ],
+    "selector": "source.c++, source.cxx, source.cpp",
+    "shell": true,
+    "working_dir": "$file_path"
+}
