@@ -5,9 +5,11 @@ test.cpp
 sol
 
 inputf.in
+inputf.txt
 
 
 outputf.in
+outputf.txt
 
 .DS_Store
 
