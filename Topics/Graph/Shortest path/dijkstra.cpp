@@ -15,6 +15,24 @@ Date: 4 Jan 2022
 	5 4 5
 */
 
+// auto dijkstra = [&](int s, vector<int> &d) -> void {
+//   priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+//   pq.push({0, s});
+//   d[s] = 0;
+//   while (!pq.empty()) {
+//     auto [w, u] = pq.top();
+//     pq.pop();
+// 	   if (w > d[u]) continue;
+//     for (auto [v, x] : graph[u]) {
+//       int curr_w = w + x;
+//       if (curr_w < d[v]) {
+//         d[v] = curr_w;
+//         pq.push({curr_w, v});
+//       }
+//     }
+//   }
+// };
+
 #include <bits/stdc++.h>
 using namespace std;
 
