@@ -21,7 +21,7 @@ vector<long long> numberOfDivisorsUpToN(long long n) {
   vector<long long> divisors(n + 1);
   // For each i, update all multiples of i
   for (long long i = 1; i <= n; i++) {
-    for (long long j = i + i; j <= n; j += i) {
+    for (long long j = i; j <= n; j += i) {
         divisors[j]++;
     }
   }
