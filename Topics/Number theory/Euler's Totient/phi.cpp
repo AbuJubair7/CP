@@ -1,14 +1,11 @@
-int mx = 2e5 + 7;
-vector<int> ph(mx);
-
-void seive_phi (int n) {
-  for (int i = 1; i<=n; i++) ph[i] = i;
-  for (int i = 2; i<=n; i += 2) ph[i] -= ph[i] / 2;
-  for (int i = 3; i <= n; i += 2) {
-    if (ph[i] == i) {
-      for (int j = i; j <= n; j += i) {
-        ph[j] -= ph[j] / i;
-      }
+vector<long long> phi(mx + 1);
+for (int i = 0; i <= mx; i++) {
+  phi[i] = i;
+}
+for (int i = 2; i <= mx; i++) {
+  if (phi[i] == i) {
+    for (int j = i; j <= mx; j += i) {
+      phi[j] -= phi[j] / i;
     }
   }
 }
