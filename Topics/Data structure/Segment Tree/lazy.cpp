@@ -6,11 +6,11 @@ struct ST {
   #define lc (n << 1)
   #define rc ((n << 1) + 1)
   long long t[4 * N + 1], lazy[4 * N + 1];
-  ST () {
+  ST() {
     memset(t, 0, sizeof t);
     memset(lazy, 0, sizeof lazy);
   }
-  inline void push (int n, int b, int e) {
+  inline void push(int n, int b, int e) {
     if (lazy[n] == 0) return;
     t[n] = t[n] + lazy[n] * (e - b + 1);
     if (b != e) {
@@ -22,10 +22,10 @@ struct ST {
   inline long long combine(long long a, long long b) {
     return a + b;
   }
-  inline void pull (int n) {
+  inline void pull(int n) {
     t[n] = t[lc] + t[rc];
   }
-  void build (int n, int b, int e) {
+  void build(int n, int b, int e) {
     lazy[n] = 0;
     if (b == e) {
       t[n] = a[b];
@@ -36,7 +36,7 @@ struct ST {
     build(rc, mid + 1, e);
     pull(n);
   }
-  void upd (int n, int b, int e, int i, int j, long long v) {
+  void upd(int n, int b, int e, int i, int j, long long v) {
     push(n, b, e);
     if (b > j or e < i) return;
     if (b >= i and e <= j) {
@@ -49,7 +49,7 @@ struct ST {
     upd(rc, mid + 1, e, i, j, v);
     pull(n);
   }
-  long long query (int n, int b, int e, int i, int j) {
+  long long query(int n, int b, int e, int i, int j) {
     push(n, b, e);
     if (b > j or e < i) return 0;
     if (b >= i and e <= j) {
