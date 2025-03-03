@@ -2,15 +2,27 @@ sol.cpp
 sol.sh
 hacker.sh
 test.cpp
+generator.cpp
+correct.cpp
+wrong.cpp
+run.cpp
+generator
+correct
+wrong
+run
+
 
 sol
 
-inputf.in
-inputf.txt
+input.in
+input.txt
 
 
-outputf.in
-outputf.txt
+output.in
+output.txt
+
+correct_solution.txt
+wrong_solution.txt
 
 .DS_Store
 
