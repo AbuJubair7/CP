@@ -10,6 +10,8 @@ generator
 correct
 wrong
 run
+gpt
+gpt.cpp
 
 
 sol
