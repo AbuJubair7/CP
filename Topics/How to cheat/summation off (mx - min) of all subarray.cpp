@@ -1,4 +1,5 @@
 // summation off (mx - min) of all subarray
+//https://codeforces.com/contest/817/problem/D
 #include <bits/stdc++.h>
  
 using namespace std;
