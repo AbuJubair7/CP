@@ -1,9 +1,8 @@
-typedef long long ll;
 constexpr int MAX_N = 1e6 + 14, MOD = 1'000'000'007;
 
 struct Mint {
   int x;
-  Mint(ll x = 0) : x((x % MOD + MOD) % MOD) {
+  Mint(long long x = 0) : x((x % MOD + MOD) % MOD) {
   }
   explicit operator int() const {
     return x;
@@ -31,12 +30,12 @@ struct Mint {
     return *this = *this - o;
   }
   friend Mint operator*(const Mint& l, const Mint& r) {
-    return (ll)l.x * r.x;
+    return (long long)l.x * r.x;
   }
   Mint& operator*=(const Mint& o) {
     return *this = *this * o;
   }
-  Mint pow(ll b) const {
+  Mint pow(long long b) const {
     Mint ans = 1;
     Mint a = *this;
     for (; b; b >>= 1, a = a * a)
